@@ -12,7 +12,10 @@ const kCardIconSize = 80.0;
 const kSizedBoxHeight = 15.0;
 const kMinHeight = 120.0;
 const kMaxHeight = 220.0;
-
+const kMinAge = 5;
+const kMaxAge = 100;
+const kMinWeight = 30;
+const kMaxWeight = 180;
 const kCardTextStyle = TextStyle(
   fontSize: 18.0,
   color: kTextStyleColor,

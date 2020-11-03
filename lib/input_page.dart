@@ -24,7 +24,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int heightValue = 180;
   int weightValue = 60;
-  int ageValue = 21;
+  int ageValue = 25;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,9 +132,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
-                                setState(() {
-                                  weightValue--;
-                                });
+                                if (weightValue > kMinWeight) {
+                                  setState(() {
+                                    weightValue--;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(
@@ -143,9 +145,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
-                                setState(() {
-                                  weightValue++;
-                                });
+                                if (weightValue < kMaxWeight) {
+                                  setState(() {
+                                    weightValue++;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -174,9 +178,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
-                                setState(() {
-                                  ageValue--;
-                                });
+                                if (ageValue > kMinAge) {
+                                  setState(() {
+                                    ageValue--;
+                                  });
+                                }
                               },
                             ),
                             SizedBox(
@@ -185,9 +191,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
-                                setState(() {
-                                  ageValue++;
-                                });
+                                if (ageValue < kMaxAge) {
+                                  setState(() {
+                                    ageValue++;
+                                  });
+                                }
                               },
                             ),
                           ],
